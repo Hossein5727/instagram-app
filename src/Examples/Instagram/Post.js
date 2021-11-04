@@ -85,88 +85,88 @@ function Post({ post }) {
                 >
                     <Link to={{
                         pathname: `/profile/${post.username}`, state: {
-                        name: post.username
+                            name: post.username
                         }
                     }}>
-                    <MenuItem onClick={handleCloseMenu}>Profile</MenuItem>
-                </Link>
-            </Menu>
-        </div>
+                        <MenuItem onClick={handleCloseMenu}>Profile</MenuItem>
+                    </Link>
+                </Menu>
+            </div>
 
-            {/* Image */ }
-    <img src={post.img} className="object-cover w-full h-full" />
+            {/* Image */}
+            <img src={post.img} className="object-cover w-full h-full" />
 
 
-    {/* Button */ }
-    <div className="p-2 flex justify-between">
-        <div className="flex align-middle">
-            <AiOutlineHeart
-                className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
-            />
-            <FaRegComment
-                className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
-            />
-            <IoPaperPlaneOutline
-                className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
-            />
-        </div>
-        <BsBookmark className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer" />
-    </div>
+            {/* Button */}
+            <div className="p-2 flex justify-between">
+                <div className="flex align-middle">
+                    <AiOutlineHeart
+                        className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
+                    />
+                    <FaRegComment
+                        className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
+                    />
+                    <IoPaperPlaneOutline
+                        className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer"
+                    />
+                </div>
+                <BsBookmark className="w-5 h-5 md:w-7 h-7  m-1 transform hover:scale-110 transition-all cursor-pointer" />
+            </div>
 
-    {/* Caption */ }
-    <div className="p-5 truncate">
-        <span className="font-bold mr-1">{post.username} </span>
-        {post.caption}
-    </div>
+            {/* Caption */}
+            <div className="p-5 truncate">
+                <span className="font-bold mr-1">{post.username} </span>
+                {post.caption}
+            </div>
 
-    {/* Comment */ }
-    {
-        finalValue && finalValue.length > 0 && (
-            <div className="h-32 overflow-y-scroll mb-5 scrollbar-none bg-gray-50 p-2">
-                <h1 className="text-2xl text-blue-500">Comments</h1>
-                {finalValue.map((item) => (
-                    <div key={item.id} className="border  border-gray-300 rounded-sm p-2 m-2">
-                        <h1 className="text-xl ">{item.name}</h1>
+            {/* Comment */}
+            {
+                finalValue && finalValue.length > 0 && (
+                    <div className="h-32 overflow-y-scroll mb-5 scrollbar-none bg-gray-50 p-2">
+                        <h1 className="text-2xl text-blue-500">Comments</h1>
+                        {finalValue.map((item) => (
+                            <div key={item.id} className="border  border-gray-300 rounded-sm p-2 m-2">
+                                <h1 className="text-xl ">{item.name}</h1>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-        )
-    }
+                )
+            }
 
-    {/* input box */ }
+            {/* input box */}
 
-    <div className="flex justify-between border-t ">
-        <HiOutlineEmojiHappy className="w-9 h-9 mr-3" />
-        <input
-            type="text"
-            placeholder="Add a comment..."
-            className="w-full  outline-none "
-            value={valueComment}
-            onChange={(e) => setValueComment(e.target.value)}
-        />
-        <button onClick={() => submitHandler(valueComment)} type="button" className="p-1 text-blue-600" style={{ opacity: valueComment.length > 0 ? '1' : '0.5' }} disabled={valueComment.length == 0 && true}>post</button>
-    </div>
-
-    {
-        isShow && (
-            <div onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} className="absolute top-14 w-auto left-12 p-4 border-2 bg-gray-50 border-gray-300 rounded-md">
-                <ShowMiniProfile
-                    detail={post}
-                    isShow={isShow}
-                    setIsShow={setIsShow}
+            <div className="flex justify-between border-t ">
+                <HiOutlineEmojiHappy className="w-9 h-9 mr-3" />
+                <input
+                    type="text"
+                    placeholder="Add a comment..."
+                    className="w-full  outline-none "
+                    value={valueComment}
+                    onChange={(e) => setValueComment(e.target.value)}
                 />
+                <button onClick={() => submitHandler(valueComment)} type="button" className="p-1 text-blue-600" style={{ opacity: valueComment.length > 0 ? '1' : '0.5' }} disabled={valueComment.length == 0 && true}>post</button>
             </div>
-        )
-    }
 
-    <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message="comment added"
-        action={action}
-        color="primary"
-    />
+            {
+                isShow && (
+                    <div onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} className="absolute top-14 w-auto left-12 p-4 border-2 bg-gray-50 border-gray-300 rounded-md">
+                        <ShowMiniProfile
+                            detail={post}
+                            isShow={isShow}
+                            setIsShow={setIsShow}
+                        />
+                    </div>
+                )
+            }
+
+            <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="comment added"
+                action={action}
+                color="primary"
+            />
         </div >
     )
 }
