@@ -3,13 +3,7 @@ import { Card, CardActions, CardContent, CardMedia, Typography, Button } from '@
 import img1 from '../../assets/image/02.jpg'
 import { Link } from 'react-router-dom'
 
-function ProfileInstagram({ history }) {
-
-    useEffect(() => {
-        console.log(history.location.state);
-    }, [])
-
-    const {name} = history.location.state
+function ProfileInstagram2() {
 
     return (
         <div className="flex justify-center align-middle p-5">
@@ -22,7 +16,7 @@ function ProfileInstagram({ history }) {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {name }
+                        Hossein
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -39,4 +33,4 @@ function ProfileInstagram({ history }) {
     )
 }
 
-export default ProfileInstagram
+export default ProfileInstagram2

@@ -43,7 +43,7 @@ function NavbarInstagram() {
                 < CgAddR className="m-2 w-6 h-6 transform hover:scale-110 transition-all" />
                 < MdOutlineExplore className="m-2 w-6 h-6 transform hover:scale-110 transition-all" />
                 < FiHeart className="m-2 w-6 h-6 transform hover:scale-110 transition-all" />
-                <Link to="/profile">
+                <Link to="/profilehossein">
                     <img
                         src={img1}
                         className="m-2 w-7 h-7 object-cover rounded-full border border-solid 
