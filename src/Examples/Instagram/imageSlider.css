@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    padding: 6px;
+    white-space: 2;
+    background:#F3F4F6;
+    overflow-x: scroll;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+    width: 120px;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+}
+
+.container::-webkit-scrollbar-thumb{
+    border: 2px solid firebrick;
+}
+
+.container ::-moz-scrollbar {
+    display: none;
+   
+  }
+ 

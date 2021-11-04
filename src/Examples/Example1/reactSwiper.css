@@ -1,0 +1,28 @@
+.container{
+  width: 600px;
+  height: 60px;
+  display: flex;
+  overflow: hidden;
+  
+}
+
+.image-slide{
+  width: 40px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    overflow: hidden; 
+  margin: 1px;
+  border: 2px solid #D97706 ;
+  border-radius: 50%;
+}
+
+.img{
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  object-fit: cover;
+}
